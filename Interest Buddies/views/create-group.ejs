@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Buddies</title>
+    <link rel="stylesheet" href="/styles/create-group.css">
+</head>
+<body>
+    <%- include("partials/navigation.ejs") %>
+    <br><br>
+    <h1>Create Group</h1>
+    <div id="wrapper">
+        <div id="create-div">
+            <form method="post" action="/create-group">
+                <input id="group-name" type="text" name="name" placeholder="Group Name" required><br>
+                <input id="group-description" type="text" name="purpose" placeholder="Group Descriptions" required><br>
+                <button id="create-btn" type="submit">Create Group</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

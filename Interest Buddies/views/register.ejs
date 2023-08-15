@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Buddies</title>
+    <link rel="stylesheet" href="/styles/register.css">
+</head>
+<body>
+    <h1>Interest Buddies..!!</h1>
+    <% if (locals.error) { %>
+        <p style="color: red; font-size: 25px; text-align: center;" ><%= error %></p>
+    <% } %>
+    <div id="wrapper">
+        <div id="login-div">
+            <form method="post" action="/register">
+                <input id="name" type="text" name="name" placeholder="Name" required><br>
+                <input id="user-name" type="text" name="username" placeholder="Username" required><br>
+                <input id="password" type="password" name="password" placeholder="Password" required><br>
+                <input id="password2" type="password" name="confirmPassword" placeholder="Confirm Password" required><br>
+                <button type="submit">Register</button>
+            </form>
+            <p id="login-text">Already Have An Account..!! Then Login..!</p>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+</body>
+</html>

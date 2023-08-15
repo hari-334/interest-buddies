@@ -1,0 +1,49 @@
+body {
+    background-color: #a0d2eb;
+}
+
+#wrapper {
+    margin: auto;
+    margin-top: 150px;
+    width: 50%;
+    text-align: center;
+}
+#create-div {
+    border: 3px solid white;
+    box-shadow: 4px 5px grey;
+    border-radius: 8px;
+    height: 200px;
+}
+
+#group-name {
+    position: relative;
+    top: 20px;
+}
+
+#group-description{
+    position: relative;
+    top: 30px;
+}
+
+#create-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.6;
+    transition: 0.3s;
+    position: relative;
+    top: 50px;
+}
+
+#create-btn:hover {
+    opacity: 1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+}

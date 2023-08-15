@@ -1,0 +1,27 @@
+body {
+    background-color: #a0d2eb;
+}
+#chat-messages {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+#chat-messages div {
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #e5eaf5;
+}
+
+#chat-history{
+    text-align: center;
+    font-size: 25px;
+}
+
+#send-div {
+    text-align: center;
+
+}

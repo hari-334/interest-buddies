@@ -1,0 +1,60 @@
+body {
+    background-color: #a0d2eb;
+}
+
+/* Add these styles to your existing CSS or create a new stylesheet */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.group-card {
+    width: calc(50% - 10px); /* Adjust the width as needed */
+    margin: 10px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#wrapper {
+    margin: auto;
+    margin-top: 150px;
+    width: 50%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+#group-div {
+    border: 3px solid white;
+    box-shadow: 4px 5px grey;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}

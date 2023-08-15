@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Buddies</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <%- include("partials/navigation.ejs") %>
+    <br><br>
+    <h1>Welcome to Dashboard</h1>
+    <h2>Groups:</h2>
+    <div id="wrapper">
+        <div id="group-div">
+            <ul>
+                <% groups.forEach(group => { %>
+                    <li class="group-card">
+                        <%= group.name %> - <%= group.purpose %> 
+                        <% if (group.members.some(member => member._id.equals(user._id))) { %>
+                            <a href="/group/<%= group._id %>">Go to Group</a>
+                        <% } else { %>
+                            <form method="post" action="/join-group">
+                                <input type="hidden" name="group_id" value="<%= group._id %>">
+                                <button type="submit">Join Group</button>
+                            </form>
+                        <% } %>
+                    </li>
+                <% }) %>
+            </ul>
+            
+        </div>
+    </div>    
+
+</body>
+</html>

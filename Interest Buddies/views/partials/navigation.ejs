@@ -1,0 +1,22 @@
+<head>
+    <link rel="stylesheet" href="/styles/nav.css">
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/create-group">Create Group</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        
+    </nav>
+    <div id="search-div">
+        <form method="post" action="/search-groups">
+            <input id="search-bar" type="text" name="searchQuery" placeholder="Search by Name or Keywords" required>
+            <button id="search-btn" type="submit">Search</button>
+        </form>
+    </div>
+    
+</header>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Interest Buddies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/group.css">
+</head>
+<body>
+    <%- include("partials/navigation.ejs")  %>
+    <br><br>
+    <h1><%= group.name %></h1>
+    <h2>Purpose: <%= group.purpose %></h2>
+    <h3>Members: <%= group.members.length %></h3>
+    <ul>
+        <% group.members.forEach(member => { %>
+            <li><%= member.name %></li>
+        <% }) %>
+    </ul>
+    <h3 id="chat-history">Chat History</h3>
+    <div id="chat-messages">
+        <% group.chatHistory.forEach(message => { %>
+            <div><%= message.sender %>: <%= message.message %></div>
+        <% }) %>
+    </div>
+
+
+
+    <br>
+    <div id="send-div">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+    </div>
+    
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.emit('join-group', '<%= group._id %>');
+
+        const chatMessages = document.getElementById('chat-messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value;
+            if (message.trim() !== '') {
+                socket.emit('send-message', { groupId: '<%= group._id %>', message });
+                messageInput.value = '';
+            }
+            
+});
+
+        socket.on('receive-message', (data) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = `${data.sender}: ${data.message}`;
+            chatMessages.appendChild(messageDiv);
+        });
+    </script>
+</body>
+</html>
